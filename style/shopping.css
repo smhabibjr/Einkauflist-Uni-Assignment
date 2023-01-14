@@ -1,0 +1,138 @@
+:root {
+    /* my document style 1 */
+    --as-font-01: sans-serif;
+    --as-bg-col-00: white;
+    --as-bg-col-01: lightgoldenrodyellow;
+    --as-col-offen: darksalmon;
+    --as-col-gehalten: green;
+    --as-col-highlight: #FF0000;
+    --as-col-table: lightcyan;
+    --as-col-hover-1: rot;
+    --as-col-hover-2: lightpink;
+    --as-bg-highlight:lightsalmon;
+    --as-width: 1000px;
+}
+
+* { /* all elements */
+    font-family: var(--as-font-01);
+    box-sizing: border-box; /* important for responsive design */
+}
+
+html {
+    width: var(--as-width);
+    background-color: var(--as-bg-col-00);
+
+}
+
+body {
+    background-color: var(--as-bg-col-01);
+}
+
+table{
+    background-color: var(--as-col-table);
+    margin-bottom: 30px;
+}
+
+table, tr, th, td {
+    border-collapse: collapse;
+    vertical-align: text-top;
+}
+thead {
+    border-bottom: black;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-top: black;
+    border-top-width: 2px;
+    border-top-style: solid;
+    text-align: left;
+}
+
+
+
+tbody tr:hover {
+    background-color: var(--as-col-hover-1);
+}
+tbody td:hover {
+    background-color: var(--as-col-hover-2);
+}
+
+tfoot {
+    border-top: black;
+    border-top-width: 2px;
+    border-top-style: solid;
+
+}
+
+h5 {
+    margin-bottom: 5px;
+}
+.b-dot-line {
+    border-bottom-width: 1px;
+    border-bottom-style: dotted;
+    border-bottom-color: black;
+}
+
+.as-width-20pc{
+    width: 200px;
+}
+.as-width-25pc{
+    width: 250px;
+}
+
+
+.as-width-50pc{
+    width: 40%;
+}
+
+.as-width-100pc{
+    width: 85%;
+}
+
+.as-m-t-b{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.as-button{
+    margin-top: 2px;
+    margin-left: 20px;
+    margin-bottom: 2px;
+}
+
+.as-button-0{
+    margin-top: 2px;
+    margin-left: 10px;
+    margin-bottom: 2px;
+}
+
+.offen {
+    background-color: var(--as-col-offen);
+}
+
+.as-bold {
+    font-weight: bold;
+}
+
+.as-highlight {
+    color: var(--as-col-highlight);
+}
+
+.as-bg-highlight {
+    background-color: var(--as-bg-highlight);
+}
+
+.gehalten {
+    background-color: var(--as-col-gehalten);
+}
+
+.as-unsichtbar {
+    display: none;
+}
+
+.as-sichtbar {
+    display: block;
+}
+
+#ergebnis ol {
+    width: 100px;
+}

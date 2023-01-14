@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style/shopping.css">
+  <title> ShoppingList </title>
+  <script src="script/shopping.js" ></script>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+<header>
+  <h1>Einkauflist</h1>
+  <hr>
+</header>
+
+<main>
+  <section class="as-m-t-b"></section>
+  <div>
+    <form id="eingabe-basisdaten">
+      <label for="user-name">Wer</label>
+      <input id="user-name" type="text"required placeholder="Wer">
+    </form>
+  </div>
+  <div id="lop-liste" class="as-unsichtbar">
+    <h5>ShoppingList</h5>
+    <div id="lop-create-save" class="as-unsichtbar">
+      <form id="aktionen" class="as-m-t-b">
+        <label for="aktionen">Besorgen:</label>
+        <input type="submit" class="as-button" value="neu">
+        <input type="submit" class="as-button" value="sichern">
+      </form>
+    </div>
+    <table class="as-width-100pc" id="lop-table">
+      <thead id="lop-thead">
+      <tr>
+        <th class="as-width-15pc" class=zuordnung">WER</th>
+        <th class="as-width-50pc" class="Aufagbe">WAS</th>
+        <th class="as-width-15pc" class="Ort">WO</th>
+        <th class="as-width-15pc" class="Datum">WANN</th>
+
+      </tr>
+      </thead>
+      <tbody id="lop-tbody">
+
+      </tbody>
+      <tfoot id="lop-tfoot">
+      <tr >
+        <td >
+        </td>
+      </tr>
+      </tfoot>
+    </table>
+  </div>
+  </div>
+  </section>
+</main>
+<footer>
+  <hr>
+  <p>"Einkauf" ist eine interne Website von Shovon Malakar für die zweite Hausübung
+    im Umfeld der Webentwicklung an der Technischen Hochschule Mittelhessen (THM). Sie dient
+    ausschließlich Zwecken der Lehre und ist nicht zur externen Veröffentlichung
+    bestimmt und freigegeben. </p>
+  <p>Autor: SHOVON MALAKAR</p>
+  <p>E-Mail: <a href="shovon.malakar@mni.thm.de">shovon.malakar@mni.thm.de</a></p>
+</footer>
+</body>
+</html>

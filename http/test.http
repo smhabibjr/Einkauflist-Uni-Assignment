@@ -1,0 +1,57 @@
+###
+POST http://localhost:9090/create
+Content-Type: application/json
+
+{
+  "besitzer" : "Karl",
+  "aufgabe" : "Hausuebung 2 ist bearbeitet",
+  "ort": "Gießen",
+  "datum": "2022-12-12",
+  "status": 1
+}
+### create
+POST http://localhost:9090/create
+Content-Type: application/json
+
+{
+  "besitzer" : "paul",
+  "aufgabe" : "Dies ist eine Aufgabe, die schwierig ist",
+  "ort": "Gießen",
+  "datum": "2023-10-01",
+  "status": 1
+}
+### read
+GET http://localhost:9090/read
+
+### read
+POST http://localhost:9090/read
+POST http://localhost:9090/update
+Content-Type: application/json
+
+{
+  "id_act" : 3
+}
+
+### update
+POST http://localhost:9090/update
+Content-Type: application/json
+
+{
+  "id_act" : 3,
+  "besitzer" : "Paula",
+  "aufgabe" : "Dies ist eine Aufgabe, die schwierig ist",
+  "ort": "Gießen",
+  "datum": "2023-10-01"
+}
+
+### save
+GET http://localhost:9090/save
+
+
+
+
+### version
+GET http://localhost:9090/version
+
+### favicon
+GET http://localhost:9090/favicon.ico

@@ -190,7 +190,7 @@ function createUpdateDelete(event) {
             if (aufgabe_aktuell === "") {
             alert("Aufgaben must be given");
                 // Wenn keine Aufgabe angegeben wurde, wird die Erzeugung des Eintrags abgebrochen.
-                //renderLoP();
+                renderLoP();
             }else {
                 // Entnehmen der Daten für den neuen Eintrag aus dem HTML-Dokument
                 var td_actual = event.target.parentElement.parentElement;

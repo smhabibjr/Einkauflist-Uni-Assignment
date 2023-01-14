@@ -80,13 +80,16 @@ function aufgabe(event) {
     var command = event.submitter.value;
     if (command === "neu") {
         if (logEvent)
-            console.log("function aufgabe-> new"); // Debug
+            //console.log("function aufgabe-> create new button clicked"); // Debug
         if (statusCreate === 0) {
+            //console.log("statuscreate" + statusCreate);
             statusCreate = 1; // Der Status 1 sperrt die Bearbeitung anderer Events, die nicht zur
             // Eingabe des neuen Einkauf-Eintrags gehören
             var tbody = document.getElementById("lop-tbody");
             var html = tbody.innerHTML; // aktuellen Tabelleninhalt sichern
+            //console.log("html " + html);
             var datumNew = (new Date()).toISOString().slice(0, 10); //aktuelles Datum bestimmen
+            //console.log("what is datumnew " + datumNew);
             // Aufbau und Ausgabe der Eingabefelder für ein neues Element der LoP
             // Die Eingabefelder werden in der ersten Zeile der Tabelle angelegt
             var get_aufgabe = "<tr class='b-dot-line' data-lop-id='" + undefined + "'> " +
@@ -97,7 +100,7 @@ function aufgabe(event) {
                 "<td data-purpose='aufgabe' data-lop-id='" + undefined + "'>" +
                 " <form>" +
                 "<input name = 'Aufgabe' type = 'text'  " +
-                "placeholder = 'Aufgabe'  class= 'as-width-100pc' data-input ='aufgabe'>" +
+                "placeholder = 'Aufgabe'  class= 'as-width-100pc' data-input ='aufgabe' required>" +
                 "<br>" +
                 "<input type = 'submit' value = 'speichern' class='as-button-0' " +
                 "data-purpose = 'speichern' data-lop-id = 'undefinded'>" +
@@ -107,7 +110,7 @@ function aufgabe(event) {
                 "</td>" +
                 "<td data-purpose = 'ort' data-lop-id ='" + undefined + "'>" +
                 "<input name = 'Ort' type = 'text'  " +
-                "placeholder = 'Ort'  class= 'as-width-25pc' data-input ='ort'>" +
+                "placeholder = 'Ort'  class= 'as-width-25pc' id='input_location' data-input ='ort' required>" +
                 "</td>>" +
                 "<td data-purpose='datum' data-lop-id='" + undefined + "'>" +
                 "<input  name='Datum' type='text' " +
@@ -124,7 +127,7 @@ function aufgabe(event) {
            als JSON in die console.log.
          */
         if (logEvent)
-            console.log("function aufgabe -> sichern"); // Debug
+            //console.log("function aufgabe -> sichern");
         // XMLHttpRequest aufsetzen und absenden
         var request_1 = new XMLHttpRequest();
         // Request starten
@@ -175,17 +178,20 @@ function createUpdateDelete(event) {
         // speichern ------------------------------------------------------------------------------
         // Erzeugen (Create) eines neuen Eintrags in der LoP
         if (logEvent)
-            console.log("function  createUpdateDelete -> speichern"); // Debug
+            console.log("function  createUpdateDelete -> speichern btn clicked"); // Debug
         if (statusCreate === 1) {
             var aufgabe_aktuell = event.target.parentElement[0].value;
+            var _aufgabe_aktuell = this.document.getElementById('input_location').value;
             //const ort_aktuell = event.target.nextSibling.parentElement[0].value;
-            console.log(aufgabe_aktuell + "aufgabe");
-            //console.log(ort_aktuell + "ort");
+            console.log("Task name  " + aufgabe_aktuell + " location name : "+ _aufgabe_aktuell);
+           if(_aufgabe_aktuell === ""){
+            alert("location must be given");
+           }else{
             if (aufgabe_aktuell === "") {
+            alert("Aufgaben must be given");
                 // Wenn keine Aufgabe angegeben wurde, wird die Erzeugung des Eintrags abgebrochen.
-                renderLoP();
-            }
-            else {
+                //renderLoP();
+            }else {
                 // Entnehmen der Daten für den neuen Eintrag aus dem HTML-Dokument
                 var td_actual = event.target.parentElement.parentElement;
                 //const aufgabe_aktuell = td_actual.target.parentElement[0].value;
@@ -220,6 +226,10 @@ function createUpdateDelete(event) {
                 };
                 renderLoP();
             }
+           }
+
+            
+            
         }
     }
     else if (command === "besitzer" || command === "aufgabe" || command === "datum" || command == "ort" ||

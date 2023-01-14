@@ -184,11 +184,13 @@ function createUpdateDelete(event) {
             var _aufgabe_aktuell = this.document.getElementById('input_location').value;
             //const ort_aktuell = event.target.nextSibling.parentElement[0].value;
             console.log("Task name  " + aufgabe_aktuell + " location name : "+ _aufgabe_aktuell);
-           if (aufgabe_aktuell !== ""){
-            if(_aufgabe_aktuell !== ""){
+            if(_aufgabe_aktuell === ""){
+            alert("location must be given");
+           }else{
             if (aufgabe_aktuell === "") {
+            alert("Aufgaben must be given");
                 // Wenn keine Aufgabe angegeben wurde, wird die Erzeugung des Eintrags abgebrochen.
-                renderLoP();
+                //renderLoP();
             }else {
                 // Entnehmen der Daten für den neuen Eintrag aus dem HTML-Dokument
                 var td_actual = event.target.parentElement.parentElement;
@@ -224,13 +226,7 @@ function createUpdateDelete(event) {
                 };
                 renderLoP();
             }
-            }else{
-                alert("Location must be submitted");
-            }
-           }else{
-            alert("Aufgaben must be given");
            }
-           
 
             
             
